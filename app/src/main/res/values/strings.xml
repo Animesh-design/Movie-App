@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Movie Review and Rating App</string>
+    <string name="pref_key_api_key">pref-api-key</string>
+</resources>

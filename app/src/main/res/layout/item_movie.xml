@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type= "com.example.moviereviewandratingapp.Movie"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_movie_card_horizontal"
+        android:layout_marginTop="@dimen/margin_movie_card_vertical"
+        android:layout_marginEnd="@dimen/margin_movie_card_horizontal"
+        android:layout_marginBottom="@dimen/margin_movie_card_vertical"
+        app:cardElevation="6dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/iv_movie_poster"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_whatshot_black_24dp"
+                app:layout_constraintDimensionRatio="h,2:3"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:url="@{movie.getLargePosterUrl()}"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_movie_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:ellipsize="end"
+                android:lines="2"
+                android:text="@{movie.title}"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iv_movie_poster"
+                app:layout_constraintTop_toBottomOf="@id/iv_movie_poster"
+                tools:text="Thor Ragnarok" />
+
+            <TextView
+                android:id="@+id/rating_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rating Label"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/tv_movie_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_movie_title" />
+
+            <TextView
+                android:id="@+id/tv_movie_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:text="@{String.valueOf(movie.votes)}"
+                android:textColor="@android:color/primary_text_light"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rating_label"
+                app:layout_constraintStart_toEndOf="@+id/rating_label"
+                tools:text="Sample Rating" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
