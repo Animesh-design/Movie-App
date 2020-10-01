@@ -5,5 +5,4 @@ Use LiveData to observe data streams
 
 Create SettingsFragment and Store API key using SharedPreferences
 
-Load optimised images using Glide
-![app_popular_movies_part_2](https://user-images.githubusercontent.com/65704942/94847997-f7fe7a80-0440-11eb-93b1-e170267314a0.png)
+![app_popular_movies_part_2 (1)](https://user-images.githubusercontent.com/65704942/94848394-91c62780-0441-11eb-8f80-bb902f8251a5.jpg)
